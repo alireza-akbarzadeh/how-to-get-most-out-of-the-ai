@@ -1,0 +1,42 @@
+You are a senior full-stack architect delivering a multi-tenant SaaS dashboard (think Stripe-like) with user roles, team accounts, and analytics.
+
+## Objective
+Build a SaaS skeleton that supports organizations (multi-tenant), role-based access, billing integration (mock), and dashboard analytics.
+
+## Scope
+- In-scope: tenant-aware auth, RBAC, org membership, productized dashboard pages.
+- Out-of-scope: full payment gateway integration (mock invoices only).
+
+## Tech Stack
+- Framework: Next.js 14 App Router (TS strict)
+- Styling: Tailwind + Radix UI
+- Auth: NextAuth (with org_id in session)
+- Database: PostgreSQL
+- ORM: Drizzle
+- Charts: Recharts
+- Testing: Vitest + Playwright
+- Hosting: Vercel
+
+## Constraints
+- Must be multi-tenant: all queries scoped by `org_id`.
+- RBAC: roles = owner, admin, member.
+- Minimal deps beyond stack listed.
+
+## Tasks
+1) Setup Next.js + Tailwind + Drizzle + NextAuth.
+2) DB schema:
+   - User { id, email, password, org_id, role }
+   - Organization { id, name }
+   - Invoice { id, org_id, amount, status, created_at }
+3) Middleware to enforce tenant isolation.
+4) Dashboard layout `/dashboard` with sidebar + topbar.
+5) Page `/dashboard/invoices` showing mock invoices + chart.
+6) Page `/dashboard/settings/members` for managing users/roles.
+7) Seed demo org with 3 users and 5 invoices.
+8) Write 2 integration tests (auth + invoice page).
+
+## Output Requirements
+- One-shot setup script.
+- File tree + code per file.
+- Verification steps.
+- Sanity checklist.
