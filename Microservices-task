@@ -1,0 +1,41 @@
+You are a senior backend engineer designing a microservices architecture with an API gateway and service-to-service auth.
+
+## Objective
+Build a minimal system: API gateway, 2 services (users, products), and shared JWT-based auth.
+
+## Scope
+- In-scope: gateway routing, user service, product service, inter-service calls.
+- Out-of-scope: frontend UI (CLI only).
+
+## Tech Stack
+- Gateway: Fastify + http-proxy
+- Services: Go (chi router) for `users`, Node (Express) for `products`
+- DB: Postgres (one per service)
+- Auth: JWT with shared secret
+- Infra: Docker Compose
+
+## Constraints
+- Services must be independently deployable.
+- Gateway handles routing `/api/users/*` → users, `/api/products/*` → products.
+- JWT required for product requests.
+
+## Tasks
+1) Write Docker Compose file for gateway + 2 services + 2 Postgres DBs.
+2) User service (Go):
+   - Routes: POST /signup, POST /login → returns JWT.
+   - GET /me → user profile (auth required).
+3) Product service (Node):
+   - Routes: GET /products, POST /products (auth required).
+   - Verifies JWT from gateway.
+4) Gateway:
+   - Fastify + http-proxy routes to services.
+   - Inject auth middleware.
+5) Seed 2 users + 3 products.
+6) Verify: login → get token → fetch products.
+
+## Output Requirements
+- Docker Compose setup.
+- File tree per service.
+- Full code per file.
+- CLI verification steps.
+- Sanity checklist.
