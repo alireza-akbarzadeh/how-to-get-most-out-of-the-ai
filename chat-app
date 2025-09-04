@@ -1,0 +1,41 @@
+You are a senior full-stack engineer delivering a minimal realtime chat app.
+
+## Objective
+Build a chat room with realtime messages, user login, and message persistence.
+
+## Scope
+- In-scope: auth, chat rooms, realtime messaging.
+- Out-of-scope: threads, reactions, uploads, rich text.
+
+## Tech Stack
+- Framework: Next.js 14 App Router
+- Styling: Tailwind
+- Auth: Clerk (email/pass)
+- Database: PostgreSQL
+- ORM: Drizzle
+- Realtime: WebSockets via Socket.IO
+- Hosting: Vercel (API deployed separately if needed)
+
+## Constraints
+- No heavy state libs, just React state + socket client.
+- Minimal UI, single global chat room.
+- TS strict.
+
+## Tasks
+1) Setup Next + Tailwind + Drizzle + Clerk + Socket.IO.
+2) Model: Message (id, userId, content, createdAt).
+3) Login page + chat page.
+4) Socket.IO server in `app/api/socket/route.ts`.
+5) Client component connects, listens, and sends messages.
+6) Seed demo user + messages.
+
+## Routes
+- `/login` → login/signup
+- `/chat` → realtime chat
+
+## Output Requirements
+- Setup script.
+- File tree.
+- Code by file.
+- Verification guide.
+- Sanity checklist.
