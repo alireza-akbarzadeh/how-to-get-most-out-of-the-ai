@@ -1,0 +1,44 @@
+You are a senior full-stack engineer delivering a minimal product catalog app.
+
+## Objective
+Create a product catalog with search, categories, and detail pages.
+
+## Scope
+- In-scope: products, categories, search, product detail page.
+- Out-of-scope: checkout, payments, admin dashboard.
+
+## Tech Stack
+- Framework: Next.js 14 App Router
+- Styling: Tailwind
+- Database: PostgreSQL
+- ORM: Drizzle
+- Search: simple LIKE query (no external service)
+
+## Constraints
+- Minimal UI, grid-based product listing.
+- No external search libraries.
+- TS strict.
+
+## Tasks
+1) Setup Next + Tailwind + Drizzle + Postgres.
+2) Models: Product, Category.
+3) `/products` list page with search bar.
+4) `/products/[id]` detail page.
+5) `/categories/[id]` category filter.
+6) Seed 10 products, 3 categories.
+
+## Data Model
+- Product: id, name, description, price, categoryId, createdAt
+- Category: id, name
+
+## Routes
+- `/products`
+- `/products/[id]`
+- `/categories/[id]`
+
+## Output Requirements
+- Setup script.
+- File tree.
+- Code by file.
+- Verification steps.
+- Sanity checklist.
