@@ -1,0 +1,42 @@
+You are a senior AI/full-stack engineer delivering a knowledge base app with AI Q&A (like Notion AI search).
+
+## Objective
+Users upload docs, which are indexed into embeddings; users can query in chat and get context answers.
+
+## Scope
+- In-scope: file upload, embedding, vector search, chat UI.
+- Out-of-scope: billing, team accounts.
+
+## Tech Stack
+- Framework: Next.js 14
+- Styling: Tailwind
+- DB: PostgreSQL
+- ORM: Prisma
+- Vector store: pgvector extension
+- AI: OpenAI API (gpt-4o-mini)
+- Uploads: Next.js file API → S3 mock
+
+## Constraints
+- Keep embedding pipeline minimal.
+- No external search services (use pgvector).
+- Protect API key in server-only code.
+
+## Tasks
+1) Setup Next + Tailwind + Prisma + pgvector.
+2) Models:
+   - Document { id, userId, title, content, embedding }
+   - QueryLog { id, userId, query, answer }
+3) File upload page `/upload` → extract text → embed → save.
+4) Chat page `/chat`:
+   - Input box, messages list.
+   - On submit: semantic search top 3 docs, pass to GPT.
+   - Render AI response.
+5) Server actions for upload + query.
+6) Seed with 2 docs (“Getting Started”, “FAQ”).
+
+## Output Requirements
+- One-shot setup.
+- File tree.
+- Code by file.
+- Verification guide.
+- Sanity checklist.
