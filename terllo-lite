@@ -1,0 +1,45 @@
+You are a senior full-stack engineer delivering a minimal Kanban-style task manager.
+
+## Objective
+Build a board → list → card app with drag-drop, persistence in DB, and minimal auth.
+
+## Scope
+- In-scope: CRUD for boards/lists/cards, drag-drop, login with email/password.
+- Out-of-scope: team collaboration, notifications, integrations.
+
+## Tech Stack
+- Framework: Next.js 15 App Router
+- Styling: Tailwind
+- Auth: NextAuth.js (credentials)
+- Database: PostgreSQL
+- ORM: Prisma
+- Drag-drop: @hello-pangea/dnd
+- Hosting: Vercel
+
+## Constraints
+- Minimal deps, keep drag-drop lib only.
+- TS strict, ESLint + Prettier.
+- No admin dashboards, just one board.
+
+## Tasks
+1) Setup Next + Tailwind + Prisma + Postgres connection.
+2) Create models: Board, List, Card (relations).
+3) Auth flow (login/signup).
+4) Page `/board/[id]` with drag-drop between lists.
+5) Server actions for CRUD.
+6) Seed with demo board.
+
+## Data Model
+- Board: id, title
+- List: id, title, boardId, order
+- Card: id, title, description, listId, order
+
+## Routes
+- `/login` (auth)
+- `/board/[id]` (Kanban)
+
+## Output Requirements
+- One-shot setup script.
+- File tree + file-by-file code.
+- Verification instructions.
+- Sanity checklist.
